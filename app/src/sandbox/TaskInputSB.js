@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 function TaskInputSB (props) {
     const [inputValue, setInputValue] = useState('');
     const [count, setCount] = useState(Number);
+
+
     function addToLocalStorage(key, temp, count){
         
-        localStorage.setItem(key, JSON.stringify(temp));
+        localStorage.setItem(key, JSON.stringify(temp),count);
         
     }
+
+
     function addTask(){
         let temp = {
             text: inputValue,
