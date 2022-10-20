@@ -29,6 +29,7 @@ function TaskInputSB (props) {
 
         //This is where I try to gather the unique id of the last task uploaded to local storage
         //this is wrong, but I am reading this for the first time this morning and can now see the errors
+        //I changed it from localStorage.key.length to .count in hopes that I will get count working in the localStorage
         let taskNumber = localStorage.count
 
         // setTask(temp);
