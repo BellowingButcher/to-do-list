@@ -15,7 +15,7 @@ function TaskInputSB () {
         let storedArray=JSON.parse(
             localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')): [];
 
-
+            console.log('this is the stored array', storedArray);
         const [taskArray, setTaskArray] = useState(storedArray);
         // const [temp, setTemp] = useState({
         //     text: inputValue,
@@ -43,14 +43,17 @@ function TaskInputSB () {
             //             id: count,
             //         }
             //         );
-                    
-                    
+            
+            
             //     }
-                
+            
             //     let temp = updateTaskTemplate();
-    
-    function addTask(){
-        //boiler plate for the task object            
+            function deleteAllTasks(){
+                localStorage.removeItem('tasks');
+                setTaskArray([]);
+            }
+            function addTask(){
+                //boiler plate for the task object            
         // setTask(temp);
         //add input value to an object boilerplate
         if (inputValue === ""){
@@ -101,6 +104,13 @@ return(
     <input onBlur={(e)=> setInputValue(e.target.value)} type="text" placeholder='What do you need done?' />
     {/* button that on click will run addtask */}
     <button type="submit" onClick={()=>{addTask()}}>Set Task</button>
+    <button onClick={()=>deleteAllTasks()}>Delete All</button>
+    {taskArray.map((task) => {
+        return (
+            <div key={task.id}>{task.text}</div>
+        )
+    })}
+
     </>
 )
 }
