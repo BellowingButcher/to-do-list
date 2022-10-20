@@ -53,6 +53,9 @@ function TaskInputSB () {
         //boiler plate for the task object            
         // setTask(temp);
         //add input value to an object boilerplate
+        if (inputValue === ""){
+            return(alert('please enter a task before hitting set task... idiot'))
+        }
         let temp = {
             text: inputValue,
             active: true,
@@ -97,7 +100,7 @@ return(
     {/* an input field that will update the inputValue after the user clicks anywhere outside of the input field */}
     <input onBlur={(e)=> setInputValue(e.target.value)} type="text" placeholder='What do you need done?' />
     {/* button that on click will run addtask */}
-    <button type="submit" onClick={()=>{addTask()} }>Set Task</button>
+    <button type="submit" onClick={()=>{addTask()}}>Set Task</button>
     </>
 )
 }
