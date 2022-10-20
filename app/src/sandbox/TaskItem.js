@@ -1,14 +1,13 @@
 function TaskItem(props){
-    function removeTask(){
-        localStorage.removeItem(props.key);
-    }
+// let element=document.getElementById(props.task.id);
     
     return(
 
-        <div>
-            <p>This is the task I need done!</p>
-            <div><i class="bi bi-check-circle-fill"></i></div>
-            <div onClick={ removeTask() }>DeleteIcon</div>
+        <div id={props.task.id}>
+            <p>{props.task.text}</p>
+            <button>Activate/Deactivate</button>
+            <button>DeleteTask</button>
         </div>
 )
 }
+export default TaskItem

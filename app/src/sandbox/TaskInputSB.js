@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import TaskItem from './TaskItem';
 
 //Component takes setTaskArray={setTaskArray} taskArray={taskArray} keyArray={keyArray} setKeyArray={setKeyArray} as current props
 function TaskInputSB () {
@@ -33,6 +34,12 @@ function TaskInputSB () {
             localStorage.setItem('count', count)
             
         }
+        React.useEffect(()=> {
+            console.log('Changed Task array')
+            setTaskArray();
+        }
+
+        ),[taskArray];
         
             // function updateTaskTemplate() {
                 
@@ -105,9 +112,10 @@ return(
     {/* button that on click will run addtask */}
     <button type="submit" onClick={()=>{addTask()}}>Set Task</button>
     <button onClick={()=>deleteAllTasks()}>Delete All</button>
+    
     {taskArray.map((task) => {
         return (
-            <div key={task.id}>{task.text}</div>
+            <TaskItem key={task.id} task={task} taskArray={taskArray} />
         )
     })}
 
