@@ -80,7 +80,7 @@ function TaskInputSB () {
         setTaskArray(bill);
             
             //Here I was trying to get the count to increment but i dont know why i was trying it here...
-            // I see know, its because it will run after I have called the add task function.  So my thinking was that I would have count set to 0 at this point
+            // I see now, its because it will run after I have called the add task function.  So my thinking was that I would have count set to 0 at this point
             // localStorage.setItem('count', count);
             //this will run addToLocalStorage
             //at this point count should be 0, temp should be the updated task because of the onBlur effect of the input field, and taskNumber would be the current count in localStorage(if taskNumber was done right)
