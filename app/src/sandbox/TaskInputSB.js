@@ -34,12 +34,12 @@ function TaskInputSB () {
             localStorage.setItem('count', count)
             
         }
-        React.useEffect(()=> {
-            console.log('Changed Task array')
-            setTaskArray();
-        }
+        // React.useEffect(()=> {
+        //     console.log('Changed Task array')
+        //     setTaskArray();
+        // }
 
-        ),[taskArray];
+        // ),[taskArray];
         
             // function updateTaskTemplate() {
                 
