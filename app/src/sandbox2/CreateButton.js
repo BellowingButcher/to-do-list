@@ -1,7 +1,7 @@
 function CreateButton (props) {
     return (
         <>
-        <button onClick={props.handleClick} ></button>
+        <button onClick={props.handleClick} >{props.text}</button>
         </>
     )
 }
